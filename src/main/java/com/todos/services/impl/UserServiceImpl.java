@@ -5,13 +5,14 @@ import com.todos.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
 public class UserServiceImpl implements UserService {
 
     @Override
-    public Set<User> findAllUsers() {
+    public List<User> findAllUsers() {
         return null;
     }
 

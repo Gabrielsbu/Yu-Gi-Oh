@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -18,7 +19,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    public Set<User> getAll(){
+    public List<User> getAll(){
         return userService.findAllUsers();
     }
     
