@@ -1,17 +1,14 @@
 package com.todos.controllers;
 
 import com.todos.models.Todo;
-import com.todos.models.User;
 import com.todos.services.TodoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
 
-@Controller
+@RestController
 @RequestMapping("/todos")
 @RequiredArgsConstructor
 public class TodoController {
