@@ -36,8 +36,14 @@ public class TodoServiceImpl implements TodoService {
         Todo todoExistent = todoRepository.getById(todoId);
         todoExistent.setDone(false);
         todoExistent.setExpired(false);
+
+        long daysDifference = todo.getNumberDays() - todoExistent.getNumberDays();
+
+        if(daysDifference > 0) {
+            todoExistent.setDateExpired(todoExistent.getDateExpired().plusDays(daysDifference));
+        }
+
         todoExistent.setNumberDays(todo.getNumberDays());
-        todoExistent.setDateExpired(LocalDateTime.now().plusDays(todo.getNumberDays()));
         todoExistent.setDescription(todo.getDescription());
 
         return todoRepository.save(todoExistent);

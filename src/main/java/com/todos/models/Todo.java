@@ -34,6 +34,7 @@ public class Todo {
     @PrePersist
     public void prePersist(){
         this.createdAt = LocalDateTime.now();
+        this.dateExpired = LocalDateTime.now().plusDays(this.getNumberDays());
     }
 
     @PreUpdate
