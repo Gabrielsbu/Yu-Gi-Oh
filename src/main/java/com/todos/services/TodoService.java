@@ -4,7 +4,6 @@ import com.todos.models.Todo;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
-import java.util.Set;
 
 public interface TodoService {
 
