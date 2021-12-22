@@ -1,32 +1,36 @@
-package com.todos.models;
+package com.todos.domain.models;
 
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.Min;
 import java.time.LocalDateTime;
 
-@Entity(name = "todos")
+@Entity(name = "card")
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 @Builder(setterPrefix = "set")
-public class Todo {
+public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long todoId;
+    private Long id;
+
+    private String name;
+
+    private Long stars;
+
+    private String avatarUri;
 
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    private Boolean done;
+    private String type;
 
-    @Min(value = 1)
-    private Long numberDays;
+    private Long atk;
+    private Long def;
 
-    private LocalDateTime dateExpired;
-
-    private Boolean expired;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Deck deck;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -34,7 +38,6 @@ public class Todo {
     @PrePersist
     public void prePersist(){
         this.createdAt = LocalDateTime.now();
-        this.dateExpired = LocalDateTime.now().plusDays(this.getNumberDays());
     }
 
     @PreUpdate

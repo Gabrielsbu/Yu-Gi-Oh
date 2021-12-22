@@ -1,9 +1,7 @@
 package com.todos.core;
 
-import io.swagger.v3.oas.models.ExternalDocumentation;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
-import io.swagger.v3.oas.models.info.License;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,8 +12,8 @@ public class Documentation {
     public OpenAPI springShopOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Todos List")
-                        .description("Administre seu dia a dia")
+                        .title("Yu-Gi-Oh X")
+                        .description("Conheça as principais cartas, personagens e Decks de Yu-Gi-Oh X")
                         .version("v1.0.0"));
     }
 }

@@ -1,4 +1,4 @@
-package com.todos.models;
+package com.todos.domain.models;
 
 import lombok.*;
 
@@ -7,29 +7,22 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name = "users")
-@Getter @Setter
-@AllArgsConstructor @NoArgsConstructor
-@Builder(setterPrefix = "set")
-public class User {
+@Entity(name = "deck")
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+public class Deck {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long id;
 
-    private String fullName;
+    private String type;
 
-    private String email;
-
-    private String password;
-
-    private String avatarUri;
-
-    @Column(columnDefinition = "TEXT")
-    private String address;
-
-    @OneToMany
-    private List<Todo> todos = new ArrayList<>();
+    @OneToMany(mappedBy = "deck", cascade = CascadeType.ALL)
+    private List<Card> cards = new ArrayList<>();
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

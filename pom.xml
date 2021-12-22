@@ -8,11 +8,11 @@
         <version>2.6.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.todos</groupId>
-    <artifactId>todos</artifactId>
+    <groupId>com.yugioh</groupId>
+    <artifactId>yugioh</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>todos</name>
-    <description>todos</description>
+    <name>yugioh</name>
+    <description>Admin Yu-Gi-Oh</description>
     <properties>
         <java.version>17</java.version>
     </properties>

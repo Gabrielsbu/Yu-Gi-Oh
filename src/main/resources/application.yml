@@ -3,7 +3,7 @@ spring:
     baseline-on-migrate: true
     enabled: false
   datasource:
-    url: jdbc:postgresql://localhost:5432/todos?serverTimezone=UTC&useSSL=false
+    url: jdbc:postgresql://localhost:5432/yugioh?serverTimezone=UTC&useSSL=false
     username: postgres
     password: 1010100
   application:

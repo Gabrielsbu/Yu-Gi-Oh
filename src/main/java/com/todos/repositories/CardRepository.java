@@ -1,9 +1,9 @@
 package com.todos.repositories;
 
-import com.todos.models.User;
+import com.todos.domain.models.Card;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface CardRepository extends JpaRepository<Card, Long> {
 }
