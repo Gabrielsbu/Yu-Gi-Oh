@@ -38,7 +38,6 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public PersonDTO create(CreatePersonDTO person) {
-
         Person personToBeCreated = personConverter.toCreateModel(person);
 
         return personConverter.toDTO(personRepository.save(personToBeCreated));

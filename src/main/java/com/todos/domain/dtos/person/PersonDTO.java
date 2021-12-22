@@ -1,10 +1,8 @@
 package com.todos.domain.dtos.person;
 
 import com.todos.domain.dtos.deck.DeckDTO;
-import com.todos.domain.models.Deck;
 import lombok.*;
 
-import javax.persistence.OneToOne;
 import java.time.LocalDateTime;
 
 @Getter

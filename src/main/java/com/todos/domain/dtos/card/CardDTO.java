@@ -2,7 +2,6 @@ package com.todos.domain.dtos.card;
 
 import lombok.*;
 
-import javax.persistence.Column;
 import java.time.LocalDateTime;
 
 @Getter
