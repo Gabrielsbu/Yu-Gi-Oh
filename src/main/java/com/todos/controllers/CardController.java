@@ -33,7 +33,7 @@ public class CardController {
     }
 
     @PutMapping("/{id}")
-    public CardDTO update(@PathVariable Long id, UpdateCardDTO card){
+    public CardDTO update(@PathVariable Long id, @RequestBody UpdateCardDTO card){
         return cardService.update(id, card);
     }
 

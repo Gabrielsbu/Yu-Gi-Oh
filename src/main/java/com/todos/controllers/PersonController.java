@@ -33,7 +33,7 @@ public class PersonController {
     }
 
     @PutMapping("/{id}")
-    public PersonDTO update(@PathVariable Long id, UpdatePersonDTO person){
+    public PersonDTO update(@PathVariable Long id, @RequestBody UpdatePersonDTO person){
         return personService.update(id, person);
     }
 
