@@ -18,6 +18,10 @@ public class DeckDTO {
 
     private String type;
 
+    private String boss;
+
+    private Double price;
+
     private List<CardDTO> cards = new ArrayList<>();
 
     private LocalDateTime createdAt;

@@ -17,6 +17,7 @@ public class UpdatePersonDTO {
     private String email;
     private String avatarUri;
     private String team;
+    private Double money;
 
     private LocalDateTime updatedAt;
 }

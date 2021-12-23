@@ -15,5 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 public class InsertCardDTO {
 
+    private Double price;
     private List<Card> cards = new ArrayList<>();
 }

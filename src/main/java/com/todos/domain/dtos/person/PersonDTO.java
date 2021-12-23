@@ -18,6 +18,7 @@ public class PersonDTO {
     private String email;
     private String avatarUri;
     private String team;
+    private Double money;
 
     private DeckDTO deck;
 

@@ -24,6 +24,10 @@ public class Deck {
     @OneToMany(mappedBy = "deck", cascade = CascadeType.ALL)
     private List<Card> cards = new ArrayList<>();
 
+    private Double price;
+
+    private String boss;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 

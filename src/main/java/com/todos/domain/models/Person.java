@@ -23,6 +23,8 @@ public class Person {
 
     private String team;
 
+    private Double money;
+
     @OneToOne
     private Deck deck;
 

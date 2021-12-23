@@ -15,5 +15,7 @@ public class UpdateDeckDTO {
 
     private String type;
 
+    private Double price;
+
     private LocalDateTime updatedAt;
 }

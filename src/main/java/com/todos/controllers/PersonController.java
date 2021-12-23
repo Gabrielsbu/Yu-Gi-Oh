@@ -41,4 +41,19 @@ public class PersonController {
     public ResponseEntity<Void> delete(@PathVariable Long id){
         return personService.deleteById(id);
     }
+
+    @PatchMapping("/{id}")
+    public PersonDTO buyDeck(@PathVariable Long id, @RequestParam Long deckId){
+        return personService.buyDeck(id, deckId);
+    }
+
+    @PatchMapping("/{id}/buy-card")
+    public PersonDTO buyCard(@PathVariable Long id, @RequestParam Long cardId){
+        return personService.buyCard(id, cardId);
+    }
+
+    @PatchMapping("/{id}/sell-card")
+    public PersonDTO sellCard(@PathVariable Long id, @RequestParam Long cardId){
+        return personService.sellCard(id, cardId);
+    }
 }

@@ -18,4 +18,10 @@ public interface PersonService {
     PersonDTO update(Long id, UpdatePersonDTO person);
 
     ResponseEntity<Void> deleteById(Long id);
+
+    PersonDTO buyDeck(Long id, Long deckId);
+
+    PersonDTO buyCard(Long id, Long cardId);
+
+    PersonDTO sellCard(Long id, Long cardId);
 }

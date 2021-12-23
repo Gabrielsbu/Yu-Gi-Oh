@@ -18,6 +18,7 @@ public class CreateCardDTO {
     private String type;
     private Long atk;
     private Long def;
+    private Double price;
 
     private LocalDateTime createdAt;
 }

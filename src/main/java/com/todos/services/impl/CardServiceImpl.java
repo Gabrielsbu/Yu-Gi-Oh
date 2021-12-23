@@ -3,6 +3,7 @@ package com.todos.services.impl;
 import com.todos.domain.dtos.card.CardDTO;
 import com.todos.domain.dtos.card.CreateCardDTO;
 import com.todos.domain.dtos.card.UpdateCardDTO;
+import com.todos.domain.enums.CardType;
 import com.todos.domain.models.Card;
 import com.todos.exceptions.GlobalException;
 import com.todos.repositories.CardRepository;
@@ -23,8 +24,24 @@ public class CardServiceImpl implements CardService {
     private final CardConverter cardConverter;
 
     @Override
+    public Card byId(Long id) {
+        return cardRepository.findById(id).orElseThrow(() -> new GlobalException("Carta não encontrada", HttpStatus.NOT_FOUND));
+    }
+
+    @Override
+    public CardDTO createSimpleCard(Card card) {
+        return cardConverter.toDTO(cardRepository.save(card));
+    }
+
+    @Override
     public List<CardDTO> findAll() {
-        return cardConverter.toCollectionDTO(cardRepository.findAll());
+        List<Card> cards = cardRepository.findAll();
+
+        if(cards.isEmpty()){
+            throw new GlobalException("Cartas inexistentes", HttpStatus.BAD_REQUEST);
+        }
+
+        return cardConverter.toCollectionDTO(cards);
     }
 
     @Override
@@ -48,7 +65,7 @@ public class CardServiceImpl implements CardService {
         cardExistent.setDescription(card.getDescription());
         cardExistent.setType(card.getType());
 
-        if(!card.getType().equals("trap")) {
+        if(card.getType().equals(CardType.MONSTER)) {
             cardExistent.setAtk(card.getAtk());
             cardExistent.setDef(card.getDef());
         }

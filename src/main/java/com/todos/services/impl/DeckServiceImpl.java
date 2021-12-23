@@ -43,8 +43,10 @@ public class DeckServiceImpl implements DeckService {
     @Override
     public DeckDTO create(CreateDeckDTO createDeckDTO) {
         Deck deck = deckConverter.toCreateModel(createDeckDTO);
+        deck.setPrice(500D);
         return deckConverter.toDTO(deckRepository.save(deck));
     }
+
 
     @Override
     public DeckDTO update(Long id, UpdateCardDTO updateCardDTO) {

@@ -18,6 +18,7 @@ public class CardDTO {
     private String avatarUri;
     private String description;
     private String type;
+    private Double price;
 
     private Long atk;
     private Long def;

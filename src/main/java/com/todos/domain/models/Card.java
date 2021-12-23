@@ -1,5 +1,6 @@
 package com.todos.domain.models;
 
+import com.todos.domain.enums.CardType;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,10 +22,13 @@ public class Card {
 
     private String avatarUri;
 
+    private Double price;
+
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private CardType type;
 
     private Long atk;
     private Long def;
