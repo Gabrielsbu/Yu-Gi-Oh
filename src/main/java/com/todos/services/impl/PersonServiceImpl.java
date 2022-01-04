@@ -10,7 +10,6 @@ import com.todos.exceptions.GlobalException;
 import com.todos.repositories.DeckRepository;
 import com.todos.repositories.PersonRepository;
 import com.todos.services.CardService;
-import com.todos.services.DeckService;
 import com.todos.services.PersonService;
 import com.todos.utils.converters.person.PersonConverter;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +17,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.rmi.AlreadyBoundException;
 import java.util.List;
 
 @Service
@@ -29,7 +27,6 @@ public class PersonServiceImpl implements PersonService {
     private final PersonConverter personConverter;
     private final DeckRepository deckRepository;
     private final CardService cardService;
-    private final DeckService deckService;
 
     private Person byId(Long id) {
         return personRepository.findById(id).orElseThrow(() -> new GlobalException("Personagem não encontrado", HttpStatus.NOT_FOUND));

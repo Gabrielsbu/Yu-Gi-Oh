@@ -13,7 +13,11 @@ public interface PersonConverter {
 
     PersonDTO toDTO(Person person);
 
+    Person toModel(PersonDTO person);
+
     Person toCreateModel(CreatePersonDTO createPersonDTO);
+
+    CreatePersonDTO toCreateDTO(Person person);
 
     List<PersonDTO> toCollectionDTO(List<Person> persons);
 }
